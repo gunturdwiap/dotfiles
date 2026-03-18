@@ -1,0 +1,4 @@
+theme = TokyoNight
+shell-integration = zsh
+window-padding-x = 8
+window-padding-y = 8
