@@ -22,7 +22,7 @@
         "showCategories": false,
         "showIconBackground": false,
         "sortByMostUsed": true,
-        "terminalCommand": "alacritty -e",
+        "terminalCommand": "ghositty -e",
         "useApp2Unit": false,
         "viewMode": "list"
     },
@@ -41,14 +41,14 @@
         "autoHideDelay": 500,
         "autoShowDelay": 150,
         "backgroundOpacity": 0.74,
-        "barType": "floating",
+        "barType": "simple",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
         "contentPadding": 2,
         "density": "default",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "floating": true,
+        "floating": false,
         "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -62,7 +62,7 @@
         ],
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
-        "outerCorners": true,
+        "outerCorners": false,
         "position": "top",
         "reverseScroll": false,
         "rightClickAction": "controlCenter",
@@ -80,15 +80,6 @@
             ],
             "left": [
                 {
-                    "colorizeSystemIcon": "primary",
-                    "customIconPath": "",
-                    "enableColorization": true,
-                    "icon": "cube",
-                    "iconColor": "none",
-                    "id": "Launcher",
-                    "useDistroLogo": true
-                },
-                {
                     "characterCount": 2,
                     "colorizeIcons": false,
                     "emptyColor": "none",
@@ -100,13 +91,13 @@
                     "hideUnoccupied": false,
                     "iconScale": 0.8,
                     "id": "Workspace",
-                    "labelMode": "index",
+                    "labelMode": "none",
                     "occupiedColor": "none",
                     "pillSize": 0.6,
                     "showApplications": false,
                     "showApplicationsHover": false,
                     "showBadge": true,
-                    "showLabelsOnlyWhenOccupied": true,
+                    "showLabelsOnlyWhenOccupied": false,
                     "unfocusedIconsOpacity": 1
                 }
             ],
@@ -479,12 +470,12 @@
     },
     "nightLight": {
         "autoSchedule": false,
-        "dayTemp": "5490",
+        "dayTemp": "4499",
         "enabled": true,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "nightTemp": "4990"
+        "nightTemp": "3999"
     },
     "noctaliaPerformance": {
         "disableDesktopWidgets": true,
@@ -492,7 +483,7 @@
     },
     "notifications": {
         "backgroundOpacity": 0.8499999999999999,
-        "clearDismissed": true,
+        "clearDismissed": false,
         "criticalUrgencyDuration": 15,
         "density": "compact",
         "enableBatteryToast": true,
@@ -506,7 +497,7 @@
         ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
-        "respectExpireTimeout": false,
+        "respectExpireTimeout": true,
         "saveToHistory": {
             "critical": true,
             "low": true,
@@ -543,7 +534,7 @@
         "countdownDuration": 10000,
         "enableCountdown": true,
         "largeButtonsLayout": "single-row",
-        "largeButtonsStyle": true,
+        "largeButtonsStyle": false,
         "position": "center",
         "powerOptions": [
             {
@@ -603,13 +594,13 @@
                 "keybind": ""
             }
         ],
-        "showHeader": true,
+        "showHeader": false,
         "showKeybinds": true
     },
     "settingsVersion": 57,
     "systemMonitor": {
-        "batteryCriticalThreshold": 5,
-        "batteryWarningThreshold": 20,
+        "batteryCriticalThreshold": 10,
+        "batteryWarningThreshold": 30,
         "cpuCriticalThreshold": 90,
         "cpuWarningThreshold": 80,
         "criticalColor": "",

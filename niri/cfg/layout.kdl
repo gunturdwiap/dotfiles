@@ -19,3 +19,9 @@
 
     	always-center-single-column
     }
+
+    recent-windows {
+      highlight {
+          corner-radius 8
+      }
+    }
