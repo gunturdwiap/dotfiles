@@ -1,0 +1,4 @@
+[[language]]
+name = "python"
+# This tells Helix: "Forget the defaults, use these two"
+language-servers = [ "pyright", "ruff" ]

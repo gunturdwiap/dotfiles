@@ -1,5 +1,5 @@
     window-rule {
-        geometry-corner-radius 8 // Set every window radius to 8
+        geometry-corner-radius 8 
         clip-to-geometry true
     }
 
@@ -10,31 +10,30 @@
     }
 
     window-rule {
-        match app-id=r#"^org\.wezfurlong\.wezterm$"#
-        match app-id="Alacritty"
-        match app-id="zen"
-        match app-id="com.mitchellh.ghostty"
-        match app-id="kitty"
-        draw-border-with-background false
-    }
-
-    window-rule {
-        match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+        match title="^Picture-in-Picture$"
         match app-id="zoom"
+
         open-floating true
+        opacity 1.0
+        default-floating-position x=32 y=32 relative-to="bottom-right"
     }
 
     window-rule {
-        match app-id=r#"^org\.gnome\."#
-        draw-border-with-background false
+        match title=".*YouTube.*"
+        match app-id="org.pwmt.zathura"
+
+        opacity 1.0
     }
 
     window-rule {
         match app-id="Zotero"
+        match app-id=r#"^org\.gnome\."#
+
         draw-border-with-background false
     }
 
     layer-rule {
         match namespace="^noctalia-wallpaper*"
+
         place-within-backdrop true
     }

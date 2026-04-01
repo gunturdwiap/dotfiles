@@ -8,6 +8,7 @@
 !noctalia/
 !tmux/
 !zed/
+!helix/
 
 noctalia/plugins/*
 

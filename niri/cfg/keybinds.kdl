@@ -69,6 +69,8 @@ binds {
     // Mod+Shift+CTRL+UP                   { move-column-to-monitor-up; }
     // Mod+Shift+CTRL+Down                 { move-column-to-monitor-down; }
 
+    // This catches the middle mouse button (Button 2) and binds it to a 'noop' 
+    MouseMiddle        { spawn "true"; }
 
     // Mod+Page_Down      { focus-workspace-down; }
     // Mod+Page_Up        { focus-workspace-up; }

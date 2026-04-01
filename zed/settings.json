@@ -7,12 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "helix_mode": false,
+  "show_edit_predictions": false,
+  "edit_predictions": {
+    "mode": "subtle",
+  },
+  "indent_guides": {
+    "coloring": "indent_aware",
+  },
   "autosave": {
     "after_delay": {
       "milliseconds": 2000,
     },
   },
-  "vim_mode": false,
+  "vim_mode": true,
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
@@ -39,4 +47,5 @@
       },
     },
   },
+  "which_key": { "enabled": true },
 }

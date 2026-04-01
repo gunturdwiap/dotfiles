@@ -1,9 +1,9 @@
     layout {
-        gaps 5 // Gap between windows
+        gaps 8 // Gap between windows
         center-focused-column "never" // Don’t auto-center focused column
 
         focus-ring {
-            width 1
+            width 2
             active-gradient from="#7aa2f7" to="#bb9af7" angle=45 relative-to="workspace-view"
         }
 
