@@ -47,5 +47,5 @@
       },
     },
   },
-  "which_key": { "enabled": true },
+  "which_key": { "enabled": true, "delay_ms": 0 },
 }

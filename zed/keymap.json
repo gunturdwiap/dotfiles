@@ -1,0 +1,60 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // "ctrl-w" should do nothing by itself, as by default Zed binds it to close the
+      // active window: this frequently causes current window to be closed accidentally due
+      // to key timeout
+      "ctrl-w": null,
+
+      // Make space doesnt reset on delay
+      "space": null,
+
+      // Open explorer
+      "space e": "project_panel::Toggle",
+
+      // Goto References
+      "g r": "editor::FindAllReferences",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space e": "project_panel::Toggle",
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "y": "project_panel::Copy",
+      "x": "project_panel::Cut",
+      "d": "project_panel::Trash",
+      "p": "project_panel::Paste",
+    },
+  },
+  {
+    "context": "Editor && showing_completions",
+    // Use tabs to switch, enter to select
+    "bindings": {
+      "tab": "editor::ContextMenuNext",
+      "shift-tab": "editor::ContextMenuPrevious",
+      "enter": "editor::ConfirmCompletion",
+    },
+  },
+]
