@@ -1,6 +1,6 @@
     layout {
         gaps 8 // Gap between windows
-        center-focused-column "never" // Don’t auto-center focused column
+        center-focused-column "on-overflow" 
 
         focus-ring {
             width 2

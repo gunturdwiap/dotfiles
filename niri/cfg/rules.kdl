@@ -7,6 +7,10 @@
         match is-active=false
 
         opacity 0.85
+        background-effect {
+            blur true
+            // xray false
+        }
     }
 
     window-rule {
@@ -21,8 +25,13 @@
     window-rule {
         match title=".*YouTube.*"
         match app-id="org.pwmt.zathura"
+        match app-id="com.github.johnfactotum.Foliate"
 
         opacity 1.0
+        background-effect {
+            blur false
+            // xray false
+        }
     }
 
     window-rule {
@@ -36,4 +45,11 @@
         match namespace="^noctalia-wallpaper*"
 
         place-within-backdrop true
+    }
+
+    layer-rule {
+      match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+      background-effect {
+        xray false
+      }
     }
