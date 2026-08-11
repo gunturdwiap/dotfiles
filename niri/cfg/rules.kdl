@@ -1,6 +1,7 @@
     window-rule {
-        geometry-corner-radius 8 
+        geometry-corner-radius 4 
         clip-to-geometry true
+        draw-border-with-background false
     }
 
     window-rule {
@@ -15,11 +16,21 @@
 
     window-rule {
         match title="^Picture-in-Picture$"
-        match app-id="zoom"
-
+        
         open-floating true
         opacity 1.0
         default-floating-position x=32 y=32 relative-to="bottom-right"
+    }
+
+    window-rule {
+        match app-id="(?i)zotero"
+        exclude title="^Zotero$"
+
+        open-floating true
+        opacity 1.0
+        
+        default-column-width { fixed 1080; }
+        default-window-height { fixed 920; }
     }
 
     window-rule {
@@ -48,8 +59,59 @@
     }
 
     layer-rule {
-      match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+      match namespace="^noctalia-(background|launcher-overlay|dock|bar)-.*$"
       background-effect {
         xray false
+        blur false
       }
     }
+
+    window-rule {  
+        match app-id="firefox" title="(ChatGPT|Claude|Google Gemini|NotebookLM) — Mozilla Firefox"  
+        block-out-from "screencast"  
+    }  
+  
+    // For Brave  
+    window-rule {  
+        match app-id="brave-browser" title="(ChatGPT|Claude|Google Gemini|NotebookLM) - Brave"  
+        block-out-from "screencast"  
+    }
+
+    window-rule {
+        match app-id="brave-browser" title="WhatsApp.*"
+        
+        block-out-from "screencast"
+    }
+
+    // Indicate screencasted windows with red colors.
+    window-rule {
+        match is-window-cast-target=true
+
+        focus-ring {
+            active-color "#f38ba8"
+            inactive-color "#7d0d2d"
+        }
+
+        border {
+            inactive-color "#7d0d2d"
+        }
+
+        shadow {
+            color "#7d0d2d70"
+        }
+
+        tab-indicator {
+            active-color "#f38ba8"
+            inactive-color "#7d0d2d"
+        }
+    }
+
+    // Noctalia V5 Beta
+    // 
+    // 
+    // window-rule {
+    //   match app-id="dev.noctalia.Noctalia"
+    //   open-floating true
+    //   default-column-width { fixed 1080; }
+    //   default-window-height { fixed 920; }
+    // }

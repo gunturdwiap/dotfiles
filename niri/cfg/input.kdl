@@ -20,3 +20,9 @@ input {
     workspace-auto-back-and-forth // Enable workspace back & forth switching
     warp-mouse-to-focus // Moves cursor to active window
 }
+
+gestures {
+    hot-corners {
+        off
+    }
+}

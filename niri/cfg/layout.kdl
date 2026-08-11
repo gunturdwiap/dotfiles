@@ -7,8 +7,7 @@
             active-gradient from="#7aa2f7" to="#bb9af7" angle=45 relative-to="workspace-view"
         }
 
-        background-color "transparent" // <- needed for noctalia-shell to set wallpaper
-
+        background-color "transparent" 
         preset-column-widths {
             proportion 0.33333
             proportion 0.5

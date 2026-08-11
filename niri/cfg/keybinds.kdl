@@ -10,10 +10,10 @@ binds {
 
     // ─── Applications ───
     Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
-    Mod+Space                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+Space                           hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+B                               hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Mod+Shift+Q                        hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
     // Please choose your own file manager.
     Mod+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; }
@@ -64,10 +64,11 @@ binds {
     // Mod+Shift+UP                        { focus-monitor-up; }
     // Mod+Shift+Down                      { focus-monitor-down; }
 
-    // Mod+Shift+CTRL+Left                 { move-column-to-monitor-left; }
-    // Mod+Shift+CTRL+Right                { move-column-to-monitor-right; }
-    // Mod+Shift+CTRL+UP                   { move-column-to-monitor-up; }
-    // Mod+Shift+CTRL+Down                 { move-column-to-monitor-down; }
+    // presentation purpose
+    Mod+Shift+CTRL+Left                 { move-column-to-monitor-left; }
+    Mod+Shift+CTRL+Right                { move-column-to-monitor-right; }
+    Mod+Shift+CTRL+UP                   { move-column-to-monitor-up; }
+    Mod+Shift+CTRL+Down                 { move-column-to-monitor-down; }
 
     // This catches the middle mouse button (Button 2) and binds it to a 'noop' 
     MouseMiddle        { spawn "true"; }
@@ -174,4 +175,6 @@ binds {
     Mod+O                               repeat=false { toggle-overview; }
 
     Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
 }

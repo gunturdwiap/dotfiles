@@ -1,5 +1,5 @@
 include "./cfg/autostart.kdl"
-include "./cfg/keybinds.kdl"
+include "./cfg/keybinds-noctaliav5.kdl"
 include "./cfg/input.kdl"
 include "./cfg/display.kdl"
 include "./cfg/layout.kdl"
@@ -7,4 +7,3 @@ include "./cfg/rules.kdl"
 include "./cfg/misc.kdl"
 
 include "./noctalia.kdl"
-

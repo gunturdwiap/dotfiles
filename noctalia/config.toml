@@ -1,0 +1,270 @@
+[bar]
+order = [ "default", "test" ]
+
+    [bar.default]
+    background_opacity = 0.0
+    capsule = true
+    capsule_border = "primary"
+    capsule_padding = 10.0
+    capsule_radius = 4
+    center = []
+    end = [ "tray", "media", "volume", "bluetooth", "network", "group:g1", "battery", "clock", "notifications" ]
+    font_family = "JetBrainsMono Nerd Font"
+    font_weight = 400
+    shadow = false
+    start = [ "settings", "workspaces" ]
+
+        [[bar.default.capsule_group]]
+        border = "primary"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "sysmon", "ram", "temp" ]
+        opacity = 1.0
+        padding = 8.0
+        radius = 4.0
+
+    [bar.test]
+    enabled = false
+
+[battery]
+warning_threshold = 20
+
+[config]
+
+[control_center]
+hidden_tabs = [ "weather" ]
+
+    [control_center.calendar]
+    show_events_card = false
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[lockscreen]
+blur_intensity = 0.29999999329447746
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 716.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.0
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = false
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = false
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 120.0
+    box_width = 432.0
+    cx = 960.0
+    cy = 524.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        background_color = "surface"
+        background_opacity = 0.80000000000000004
+        background_padding = 10
+        background_radius = 12
+        center_text = false
+        circle = true
+        clock_style = "digital"
+        color = "on_surface"
+        font_family = ""
+        format = "{:%H:%M}"
+        shadow = true
+        timezone = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 32.0
+    box_width = 320.0
+    cx = 960.0
+    cy = 580.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+        clock_style = "digital"
+        format = "{:%A, %d %B %Y}"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 72.0
+    box_width = 312.0
+    cx = 960.0
+    cy = 636.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+        background_color = "surface"
+        background_opacity = 0.80000000000000004
+        background_padding = 10
+        background_radius = 12
+        bands = 32
+        centered = true
+        color_1 = "primary"
+        color_2 = "primary"
+        mirrored = true
+        show_when_idle = false
+
+[nightlight]
+enabled = true
+force = true
+temperature_day = 4500
+temperature_night = 4500
+
+[osd]
+position = "bottom_center"
+
+[shell]
+corner_radius_scale = 0.5000000074505806
+font_family = "JetBrainsMono Nerd Font Mono"
+polkit_agent = true
+popup_shadows = false
+
+    [shell.animation]
+    speed = 3.0000000447034836
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    categories = false
+    fetch_exchange_rates = false
+    sort_by_usage = false
+
+        [shell.launcher.providers.emoji]
+        global = false
+
+        [shell.launcher.providers.session]
+        global = true
+
+    [shell.panel]
+    control_center_placement = "floating"
+    floating_offset = 6
+    open_near_click_control_center = true
+    session_placement = "floating"
+    session_position = "center"
+    shadow = false
+    wallpaper_placement = "floating"
+    wallpaper_position = "center"
+
+    [shell.session]
+    grid_columns = 5
+
+[templates]
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Catppuccin Macchiato Blue"
+custom_palette = "blue-tokyo-night"
+source = "custom"
+wallpaper_scheme = "m3-rainbow"
+
+[wallpaper]
+directory = "/home/gunturdwiap/Pictures/Wallpapers"
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/gunturdwiap/Pictures/Wallpapers/wallhaven_yqey3l.jpg"
+
+    [wallpaper.last]
+    path = "/home/gunturdwiap/Pictures/Wallpapers/wallhaven_yqey3l.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/gunturdwiap/Pictures/Wallpapers/wallhaven_yqey3l.jpg"
+
+[widget.clock]
+format = "{:%d} - {:%H:%M}"
+
+[widget.media]
+hide_album_art = true
+hide_when_no_media = true
+max_length = 800
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.ram]
+show_label = false
+
+[widget.settings]
+color = "primary"
+glyph = "niri"
+
+[widget.sysmon]
+show_label = false
+
+[widget.temp]
+show_label = false
+
+[widget.volume]
+show_label = false
+
+[widget.workspaces]
+occupied_color = "on_surface"
+style = "minimal"
