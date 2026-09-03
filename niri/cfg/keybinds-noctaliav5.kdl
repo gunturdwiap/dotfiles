@@ -5,7 +5,7 @@ binds {
     // ==========================================
     //  APPLICATIONS
     // ==========================================
-    Mod+Return hotkey-overlay-title="Open Terminal: Ghostty" {
+    Mod+Return hotkey-overlay-title="Open Terminal" {
         spawn "ghostty"
     }
     Mod+Space {

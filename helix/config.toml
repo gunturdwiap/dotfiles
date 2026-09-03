@@ -14,7 +14,15 @@ inline-diagnostics.cursor-line = "hint"
 insert = "bar"
 
 [editor.statusline]
-left = ["mode", "spacer", "spinner", "spacer", "file-name", "read-only-indicator", "file-modification-indicator"]
+left = [
+  "mode",
+  "spacer",
+  "spinner",
+  "spacer",
+  "file-name",
+  "read-only-indicator",
+  "file-modification-indicator",
+]
 center = []
 right = ["diagnostics", "selections", "position", "file-encoding", "file-type", "version-control"]
 separator = "│"
@@ -27,4 +35,6 @@ render = true
 skip-levels = 1
 
 [keys.normal]
+x = "select_line_below"
+X = "select_line_above"
 esc = ["collapse_selection", "keep_primary_selection"]

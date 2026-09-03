@@ -17,6 +17,21 @@ command = "ruff"
 args = ["server"]
 
 [[language]]
+name = "typescript"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+[[language]]
+name = "javascript"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "babel"] }
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[language]]
 name = "vue"
 auto-format = true
 formatter = { command = "prettier", args = ["--parser", "vue"] }
@@ -26,3 +41,25 @@ language-servers = ["typescript-language-server"]
 name = "@vue/typescript-plugin"
 location = "/home/gunturdwiap/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/typescript-plugin"
 languages = ["vue"]
+
+[[language]]
+name = "astro"
+auto-format = true
+formatter = { command = "prettier", args = ["--plugin", "prettier-plugin-astro", "--parser", "astro"] }
+language-servers = ["astro-ls"]
+
+[[language-server.typescript-language-server.config.plugins]]
+name = "@astrojs/ts-plugin"
+location = "/home/gunturdwiap/.local/share/nvim/mason/packages/astro-language-server/node_modules/@astrojs/ts-plugin"
+languages = [ "astro" ]
+
+[[language]]
+name = "sql"
+language-servers = ["sqls"]
+formatter = { command = "sql-formatter", args = ["--language", "postgresql"] }
+auto-format = true
+
+[language-server.sqls]
+command = "sqls"
+args = ["--config", "/home/gunturdwiap/.config/sqls/config.yml"]
+config = { provideFormatter = true }
