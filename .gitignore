@@ -12,6 +12,7 @@
 
 noctalia/plugins/*
 tmux/plugins/*
+helix/runtime/*
 
 **/node_modules/
 **/.DS_Store

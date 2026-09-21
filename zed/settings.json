@@ -8,21 +8,21 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "agent": {
     "dock": "right",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "helix_mode": true,
   "show_edit_predictions": false,
@@ -54,15 +54,106 @@
     "light": "Tokyo Night Light",
     "dark": "Tokyo Night",
   },
-  "languages": {
-    "Python": {
-      "language_servers": ["pyright", "ruff"],
-      "format_on_save": "on",
-      "code_actions_on_format": {
-        "source.organizeImports.ruff": true,
-        "source.fixAll.ruff": true,
+  "which_key": { "enabled": true, "delay_ms": 0 },
+  "lsp": {
+    "pyrefly": {
+      "command": "pyrefly",
+      "args": ["lsp"],
+    },
+    "ruff": {
+      "command": "ruff",
+      "args": ["server"],
+    },
+    "typescript-language-server": {
+      "command": "typescript-language-server",
+      "args": ["--stdio"],
+      "initialization_options": {
+        "plugins": [
+          {
+            "name": "@vue/typescript-plugin",
+            "location": "/home/gunturdwiap/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/typescript-plugin",
+          },
+          {
+            "name": "@astrojs/ts-plugin",
+            "location": "/home/gunturdwiap/.local/share/nvim/mason/packages/astro-language-server/node_modules/@astrojs/ts-plugin",
+          },
+        ],
+      },
+    },
+    "sqls": {
+      "command": "sqls",
+      "args": ["--config", "/home/gunturdwiap/.config/sqls/config.yml"],
+      "initialization_options": {
+        "provideFormatter": true,
       },
     },
   },
-  "which_key": { "enabled": true, "delay_ms": 0 },
+  "languages": {
+    "Go": {
+      "formatter": {
+        "external": {
+          "command": "goimports",
+        },
+      },
+    },
+    "Python": {
+      "language_servers": ["pyrefly", "ruff"],
+    },
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--parser", "typescript"],
+        },
+      },
+    },
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--parser", "babel"],
+        },
+      },
+    },
+    "JSON": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--parser", "json"],
+        },
+      },
+    },
+    "Vue": {
+      "language_servers": ["typescript-language-server"],
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--parser", "vue"],
+        },
+      },
+    },
+    "Astro": {
+      "language_servers": ["typescript-language-server"],
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--plugin",
+            "prettier-plugin-astro",
+            "--parser",
+            "astro",
+          ],
+        },
+      },
+    },
+    "SQL": {
+      "language_servers": ["sqls"],
+      "formatter": {
+        "external": {
+          "command": "sql-formatter",
+          "arguments": ["--language", "postgresql"],
+        },
+      },
+    },
+  },
 }

@@ -3,6 +3,17 @@ name = "go"
 auto-format = true
 formatter = { command = "goimports" }
 
+
+[[language]]
+name = "gotmpl"
+file-types = ["tmpl", "gotmpl"]
+# language-servers = ["gopls", "vscode-html-language-server"]
+language-servers = [
+  { name = "gopls", except-features = ["format"] },
+  "vscode-html-language-server"
+]
+auto-format = true
+
 [[language]]
 name = "python"
 language-servers = [ "pyrefly", "ruff" ]
@@ -62,4 +73,18 @@ auto-format = true
 [language-server.sqls]
 command = "sqls"
 args = ["--config", "/home/gunturdwiap/.config/sqls/config.yml"]
-config = { provideFormatter = true }
+# config = { provideFormatter = true }
+
+# [language-server.postgres-language-server]
+# command = "postgres-language-server"
+# args = ["lsp-proxy"]
+
+# [[language]]
+# name = "sql"
+# scope = "source.sql"
+# injection-regex = "sql"
+# file-types = ["sql"]
+# comment-token = "--"
+# roots = ["postgres-language-server.jsonc"]
+# language-servers = ["postgres-language-server"]
+

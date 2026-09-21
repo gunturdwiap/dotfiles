@@ -1,5 +1,5 @@
 [bar]
-order = [ "default", "test" ]
+order = [ "good-enough", "default" ]
 
     [bar.default]
     background_opacity = 0.0
@@ -8,7 +8,8 @@ order = [ "default", "test" ]
     capsule_padding = 10.0
     capsule_radius = 4
     center = []
-    end = [ "tray", "media", "volume", "bluetooth", "network", "group:g1", "battery", "clock", "notifications" ]
+    enabled = false
+    end = [ "tray", "media", "volume", "bluetooth", "network", "group:g1", "battery", "clock", "clipboard" ]
     font_family = "JetBrainsMono Nerd Font"
     font_weight = 400
     shadow = false
@@ -24,13 +25,48 @@ order = [ "default", "test" ]
         padding = 8.0
         radius = 4.0
 
-    [bar.test]
-    enabled = false
+    [bar.good-enough]
+    background_opacity = 0.84999998100101948
+    capsule_radius = 4
+    center = []
+    enabled = true
+    end = [ "media", "group:g1", "battery", "tray", "group:g2", "clock", "clipboard", "notifications" ]
+    margin_ends = 0
+    padding = 20
+    radius = 0
+    shadow = false
+    start = [ "settings", "workspaces", "taskbar" ]
+    thickness = 28
+    widget_spacing = 20
+
+        [[bar.good-enough.capsule_group]]
+        accordion = false
+        accordion_direction = "start"
+        border = ""
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "cpu", "ram", "temp" ]
+        opacity = 1.0
+        padding = 5.0
+        radius = 4.0
+        widget_spacing = 10
+
+        [[bar.good-enough.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "bluetooth", "network", "volume" ]
+        opacity = 1.0
+        padding = 6.0
+        radius = 4.0
 
 [battery]
 warning_threshold = 20
 
-[config]
+[calendar]
 
 [control_center]
 hidden_tabs = [ "weather" ]
@@ -39,6 +75,7 @@ hidden_tabs = [ "weather" ]
     show_events_card = false
 
 [desktop_widgets]
+enabled = false
 schema_version = 2
 widget_order = []
 
@@ -73,12 +110,7 @@ blur_intensity = 0.29999999329447746
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
-widget_order = [
-    "lockscreen-login-box@eDP-1",
-    "lockscreen-widget-0000000000000001",
-    "lockscreen-widget-0000000000000002",
-    "lockscreen-widget-0000000000000003"
-]
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001", "lockscreen-widget-0000000000000002" ]
 
     [lockscreen_widgets.grid]
     cell_size = 8
@@ -89,8 +121,10 @@ widget_order = [
     box_height = 70.0
     box_width = 400.0
     cx = 960.0
-    cy = 716.0
+    cy = 612.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -111,11 +145,13 @@ widget_order = [
         show_weather = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 120.0
-    box_width = 432.0
-    cx = 960.0
-    cy = 524.0
+    box_height = 144.0
+    box_width = 328.0
+    cx = 968.0
+    cy = 512.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -136,10 +172,12 @@ widget_order = [
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
     box_height = 32.0
-    box_width = 320.0
+    box_width = 328.0
     cx = 960.0
-    cy = 580.0
+    cy = 572.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -147,28 +185,6 @@ widget_order = [
         background = false
         clock_style = "digital"
         format = "{:%A, %d %B %Y}"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-    box_height = 72.0
-    box_width = 312.0
-    cx = 960.0
-    cy = 636.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "audio_visualizer"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
-        background = false
-        background_color = "surface"
-        background_opacity = 0.80000000000000004
-        background_padding = 10
-        background_radius = 12
-        bands = 32
-        centered = true
-        color_1 = "primary"
-        color_2 = "primary"
-        mirrored = true
-        show_when_idle = false
 
 [nightlight]
 enabled = true
@@ -179,14 +195,24 @@ temperature_night = 4500
 [osd]
 position = "bottom_center"
 
+[plugins]
+enabled = []
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
 [shell]
 corner_radius_scale = 0.5000000074505806
 font_family = "JetBrainsMono Nerd Font Mono"
 polkit_agent = true
 popup_shadows = false
-
-    [shell.animation]
-    speed = 3.0000000447034836
 
     [shell.greeter_sync]
     auto_sync = true
@@ -203,26 +229,31 @@ popup_shadows = false
         global = true
 
     [shell.panel]
-    control_center_placement = "floating"
+    control_center_placement = "attached"
     floating_offset = 6
     open_near_click_control_center = true
-    session_placement = "floating"
     session_position = "center"
-    shadow = false
     wallpaper_placement = "floating"
     wallpaper_position = "center"
 
     [shell.session]
     grid_columns = 5
 
-[templates]
-
 [theme]
 builtin = "Tokyo-Night"
 community_palette = "Catppuccin Macchiato Blue"
 custom_palette = "blue-tokyo-night"
+mode = "dark"
 source = "custom"
 wallpaper_scheme = "m3-rainbow"
+
+    [theme.templates]
+    builtin_ids = [ "gtk4", "qt" ]
+    community_ids = [ "libreoffice", "yazi" ]
+
+        [theme.templates.user.palette_creator_live]
+        input_path = "/home/gunturdwiap/.local/state/noctalia/plugins/materialized/community/palette-creator/templates/live-snapshot.tpl"
+        output_path = "/home/gunturdwiap/.local/state/noctalia/plugin-data/kyle-palette-creator/live-snapshot.json"
 
 [wallpaper]
 directory = "/home/gunturdwiap/Pictures/Wallpapers"
@@ -237,13 +268,19 @@ transition_on_startup = true
     [wallpaper.monitors.eDP-1]
     path = "/home/gunturdwiap/Pictures/Wallpapers/wallhaven_yqey3l.jpg"
 
+[widget.brightness]
+show_label = false
+
 [widget.clock]
 format = "{:%d} - {:%H:%M}"
 
+[widget.cpu]
+visualization = "none"
+
 [widget.media]
-hide_album_art = true
 hide_when_no_media = true
-max_length = 800
+max_length = 400
+show_progress = true
 title_scroll = "on_hover"
 
 [widget.network]
@@ -251,20 +288,31 @@ show_label = false
 
 [widget.ram]
 show_label = false
+visualization = "none"
 
 [widget.settings]
 color = "primary"
+custom_image_colorize = true
 glyph = "niri"
+scale = 1.3500000000000001
 
 [widget.sysmon]
-show_label = false
+show_value = false
+
+[widget.taskbar]
+capsule = true
+inactive_opacity = 0.75
+show_active_indicator = false
+show_window_title = true
 
 [widget.temp]
 show_label = false
+visualization = "none"
 
 [widget.volume]
 show_label = false
 
 [widget.workspaces]
+capsule = true
 occupied_color = "on_surface"
 style = "minimal"
