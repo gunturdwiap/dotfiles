@@ -1,0 +1,6 @@
+[user]
+	email = 134345361+gunturdwiap@users.noreply.github.com
+	name = gunturdwiap
+[core]
+	autocrlf = input
+	editor = helix

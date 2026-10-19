@@ -4,11 +4,13 @@
 
 !alacritty/
 !ghostty/
+!git/
+!helix/
 !niri/
 !noctalia/
 !tmux/
 !zed/
-!helix/
+!zsh/
 
 noctalia/plugins/*
 tmux/plugins/*
